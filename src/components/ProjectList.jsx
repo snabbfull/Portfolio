@@ -12,7 +12,7 @@ export function ProjectList({ list, selected }) {
     return (
       <div className="items-container">
         {filteredItems.map((item) => (
-          <img className="list-item" key={item.id} src={item.img} />
+          <img className="list-img" key={item.id} src={item.img} />
         ))}
       </div>
     );
