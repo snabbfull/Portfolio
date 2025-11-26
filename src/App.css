@@ -1,0 +1,112 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: "Inter", "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.5;
+  color: #1c1c1c;
+  background-color: #f5f5f5;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 2.5rem 1.5rem 3rem;
+  display: flex;
+  justify-content: center;
+  background: radial-gradient(circle at top, #f8fbff 0%, #f1f4f9 40%, #e1e7f4 100%);
+}
+
+#root {
+  width: min(1120px, 100%);
+}
+
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  padding: 0.75rem;
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 12px 35px rgba(25, 45, 92, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.filters-btn {
+  border: 1px solid #d8e0f4;
+  background: #fff;
+  color: #1b2a4a;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.55rem 1.5rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease,
+    transform 0.15s ease;
+}
+
+.filters-btn:hover {
+  border-color: #8ea7f6;
+  color: #2c43a0;
+  box-shadow: 0 6px 18px rgba(50, 79, 190, 0.18);
+}
+
+.filters-btn:focus-visible {
+  outline: 3px solid rgba(90, 118, 255, 0.4);
+  outline-offset: 1px;
+}
+
+.filters-btn:active {
+  transform: translateY(1px);
+}
+
+.filters-btn--active {
+  background: linear-gradient(135deg, #596bff, #8c5bff);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 12px 30px rgba(82, 95, 255, 0.35);
+}
+
+.items-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.list-img {
+  width: 100%;
+  height: 320px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 18px;
+  border: 1px solid #dfe6f7;
+  box-shadow: 0 18px 30px rgba(24, 42, 86, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 0.5rem;
+}
+
+.list-img:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 20px 45px rgba(24, 42, 86, 0.2);
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 1.5rem 1rem 2.5rem;
+  }
+
+  .filter-container {
+    border-radius: 24px;
+  }
+
+  .filters-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
